@@ -42,7 +42,7 @@ public class CelluleLumineuse {
         
    
     
-    public void ChangerCellule(){
+    public void changerCellule(){
         if(allumee==true){
             allumee=false;
         }else{

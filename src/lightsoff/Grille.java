@@ -46,10 +46,17 @@ public class Grille { // on initialise notre grille de jeu
     }
     
     public void AllumerCase (int x, int y){ 
+        if (GrilledeJeu[x][y].etreAllumee()==false ){
+            GrilledeJeu[x][y].changerEtat();
+        }
         
     }
     
     public void EteindreCase (int x, int y){
+         if (GrilledeJeu[x][y].etreAllumee()==true ){
+            GrilledeJeu[x][y].changerEtat();
+        }
+        
         
     }
     
