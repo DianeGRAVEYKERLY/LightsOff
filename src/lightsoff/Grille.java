@@ -15,7 +15,7 @@ public class Grille { // on initialise notre grille de jeu
     public Grille (){
         for (int i=0;i<5;i++){
             for(int j=0; j<5;j++){
-               GrilleDeJeu[i][j] = new CelluleLumineuse();
+               GrilleDeJeu[i][j] = new CelluleLumineuse(false);
             }
            
         }
@@ -47,14 +47,14 @@ public class Grille { // on initialise notre grille de jeu
     
     public void AllumerCase (int x, int y){ 
         if (GrilledeJeu[x][y].etreAllumee()==false ){
-            GrilledeJeu[x][y].changerEtat();
+            GrilledeJeu[x][y].changerCellule();
         }
         
     }
     
     public void EteindreCase (int x, int y){
          if (GrilledeJeu[x][y].etreAllumee()==true ){
-            GrilledeJeu[x][y].changerEtat();
+            GrilledeJeu[x][y].changerCellule();
         }
         
         
