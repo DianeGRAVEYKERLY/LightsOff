@@ -9,5 +9,6 @@ package lightsoff;
  * @author alexia
  */
 public class Partie {
-    
+    private Joueur joueurcourant;
+    private Grille plateau;
 }
