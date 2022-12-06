@@ -9,5 +9,7 @@ package lightsoff;
  * @author alexia
  */
 public class Joueur {
+    String nom;
+    
     
 }
