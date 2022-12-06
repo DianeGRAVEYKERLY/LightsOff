@@ -9,5 +9,44 @@ package lightsoff;
  * @author alexia
  */
 public class CelluleLumineuse {
+    boolean allumee;
+    public CelluleLumineuse(boolean a){
+        a=allumee;
+        
+    }
     
+    
+    
+    public boolean etreAllumee(){
+        if (allumee==true){
+            return (true);
+            
+        }else{
+            return(false);
+        }
+        
+    
+    }
+    public boolean etreEteinte(){
+        if(allumee==false){
+            return (true);
+        }else{
+            return(false);
+            
+        }
+    }
+    
+    
+        
+            
+        
+   
+    
+    public void ChangerCellule(){
+        if(allumee==true){
+            allumee=false;
+        }else{
+            allumee=true;
+        }
+    }
 }
