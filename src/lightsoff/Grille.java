@@ -8,6 +8,60 @@ package lightsoff;
  *
  * @author alexia
  */
-public class Grille {
+public class Grille { // on initialise notre grille de jeu
+    CelluleLumineuse GrilleDeJeu[][] = new CelluleLumineuse [5][5];
+    
+    
+    public Grille (){
+        for (int i=0;i<5;i++){
+            for(int j=0; j<5;j++){
+               GrilleDeJeu[i][j] = new CelluleLumineuse();
+            }
+           
+        }
+        
+    }
+    
+    
+    public boolean EtreGagnant (){ //méthode pour savoir si le joueur a gagné 
+        int compteur = 0;
+        for (int i=0; i<5; i++){
+            for (int j=0; j<5; j++){
+                if ( GrilleDeJeu[i][j].etatCellule == false ){
+                    compteur +=1;
+                }
+            }
+        }
+        
+        if (compteur == 25){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public void clic_sur_case(int x, int y){
+        
+        
+    }
+    
+    public void AllumerCase (int x, int y){ 
+        
+    }
+    
+    public void EteindreCase (int x, int y){
+        
+    }
+    
+    public void CaseEteinte (int X, int y){
+        
+    }
+    
+    public void CaseAllume (int x, int y){
+        
+    }
+    
+    
+    
     
 }
