@@ -15,7 +15,7 @@ public class Grille { // on initialise notre grille de jeu
     public Grille (){
         for (int i=0;i<5;i++){
             for(int j=0; j<5;j++){
-               GrilleDeJeu[i][j] = new CelluleLumineuse();
+               GrilleDeJeu[i][j] = new CelluleLumineuse(false);
             }
            
         }
@@ -27,7 +27,7 @@ public class Grille { // on initialise notre grille de jeu
         int compteur = 0;
         for (int i=0; i<5; i++){
             for (int j=0; j<5; j++){
-                if ( GrilleDeJeu[i][j].etatCellule == false ){
+                if ( GrilleDeJeu[i][j].etreEteinte() == true ){
                     compteur +=1;
                 }
             }
@@ -40,23 +40,22 @@ public class Grille { // on initialise notre grille de jeu
         }
     }
     
-    public void clic_sur_case(int x, int y){
+    public void clic_sur_case(int x, int y){ //quand le joueur clic sur une case elle change d'état ainsi que les 4 cases alentours
+        GrilleDeJeu[x][y].changerCellule();
+        GrilleDeJeu[x+1][y].changerCellule();
+        GrilleDeJeu[x-1][y].changerCellule();
+        GrilleDeJeu[x][y+1].changerCellule();
+        GrilleDeJeu[x][y-1].changerCellule();
+        
         
         
     }
     
     public void AllumerCase (int x, int y){ 
-        if (GrilledeJeu[x][y].etreAllumee()==false ){
-            GrilledeJeu[x][y].changerEtat();
-        }
         
     }
     
     public void EteindreCase (int x, int y){
-         if (GrilledeJeu[x][y].etreAllumee()==true ){
-            GrilledeJeu[x][y].changerEtat();
-        }
-        
         
     }
     
