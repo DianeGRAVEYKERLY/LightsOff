@@ -27,7 +27,7 @@ public class Grille { // on initialise notre grille de jeu
         int compteur = 0;
         for (int i=0; i<5; i++){
             for (int j=0; j<5; j++){
-                if ( GrilleDeJeu[i][j].etatCellule == false ){
+                if ( GrilleDeJeu[i][j].etreEteinte() ==true ){
                     compteur +=1;
                 }
             }
