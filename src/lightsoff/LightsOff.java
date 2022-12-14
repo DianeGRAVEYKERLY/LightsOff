@@ -15,6 +15,9 @@ public class LightsOff {
      */
     public static void moain(String[] args) {
         // TODO code application logic here
+        System.out.println("Vous entrez dans le jeu light off");
+        Partie une_partie = new Partie();
+        une_partie.lancer_partie();
         
     }
     
