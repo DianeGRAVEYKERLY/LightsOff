@@ -13,7 +13,7 @@ public class LightsOff {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void moain(String[] args) {
         // TODO code application logic here
         
     }
