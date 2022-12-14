@@ -24,9 +24,9 @@ public class Partie {
         for (int i=0; i<nb_case; i++ ){
             
             Random n=new Random();
-            int ligne = n.nextInt(5);
+            int ligne = n.nextInt(4);
             Random nb = new Random();
-            int colonne = nb.nextInt(6);
+            int colonne = nb.nextInt(4);
             plateau.AllumerCase(ligne,colonne);
 
         }   
