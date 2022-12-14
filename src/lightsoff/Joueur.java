@@ -10,9 +10,10 @@ package lightsoff;
  */
 public class Joueur {
     String nom;
-    
-    
-    
+
+    public String Nom() {
+        return nom;
+    }
     
     
 }
