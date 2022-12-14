@@ -14,13 +14,25 @@ import javax.swing.JButton;
  */
 public class CelluleGraphique extends JButton {
     CelluleLumineuse celluleAssociee;
+    ImageIcon img_vide;
+    ImageIcon img_lumin;
     public CelluleGraphique (CelluleLumineuse uneCellule){
         celluleAssociee=uneCellule;
-        ImageIcon img_vide = new javax.swing.ImageIcon(getClass().getResource("/images/celluleVide/.png"));
+         img_vide = new javax.swing.ImageIcon(getClass().getResource("/images/celluleVide/.png"));
+        img_lumin = new javax.swing.ImageIcon(getClass().getResource("/images/jetonJaune/.png"));
     }
 
     @Override
     public void paintComponent (Graphics G){
+        if(celluleAssociee.etreAllumee()==true){
+            setIcon(img_lumin);
+            
+        }else{
+            setIcon(img_vide);
+        }
+        
+        super.paintComponent(G);
         setIcon(img_vide);
+        
 }
 }
