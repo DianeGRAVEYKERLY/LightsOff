@@ -158,7 +158,15 @@ while (plateauDeJeu.EtreGagnant()==false) {
     }
          public void lancer_partie(){ //tant qu'il y a des lumières allumées on demande au joueur de choisir une ligne et colonne de la cellule qu'il veut changer d'etat
         
-        allumer_lumieres();
+       for (int i=0; i<5;i++){ //on éteint toutes les case avant de démarrer une partie
+           for (int j=0; j<5; j++){
+               plateauDeJeu.EteindreCase(i, j);
+           }
+       }
+             
+             allumer_lumieres();
+        
+        
         
         
         
