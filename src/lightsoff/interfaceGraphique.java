@@ -51,27 +51,49 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
     private void initComponents() {
 
         panneau_grille = new javax.swing.JPanel();
+        lancer_partie = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        panneau_grille.setBackground(new java.awt.Color(153, 255, 255));
         panneau_grille.setLayout(new java.awt.GridLayout(5, 5));
+
+        lancer_partie.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        lancer_partie.setText("Démarrer Partie");
+        lancer_partie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lancer_partieActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panneau_grille, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panneau_grille, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(149, 149, 149)
+                .addComponent(lancer_partie)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panneau_grille, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
-                .addGap(33, 33, 33))
+                .addComponent(panneau_grille, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lancer_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lancer_partieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancer_partieActionPerformed
+    lancer_partie();        // TODO add your handling code here:
+    }//GEN-LAST:event_lancer_partieActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,6 +163,7 @@ public void allumer_lumieres(){ //on allume quelques cases aléatoires
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton lancer_partie;
     private javax.swing.JPanel panneau_grille;
     // End of variables declaration//GEN-END:variables
 }
