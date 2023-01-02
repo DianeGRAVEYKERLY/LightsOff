@@ -134,6 +134,8 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
         
         allumer_lumieres();
         
+        
+        
       //  while (plateau.EtreGagnant()==false){
 
          //   System.out.println("Choisissez la cellule à éteindre" + '\n' + "Exprimer la coordonnée en Ligne puis Colonne");
