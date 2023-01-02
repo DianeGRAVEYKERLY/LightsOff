@@ -52,7 +52,6 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
 
         panneau_grille = new javax.swing.JPanel();
         lancer_partie = new javax.swing.JButton();
-        gagnant = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,10 +67,6 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
             }
         });
 
-        gagnant.setFont(new java.awt.Font("Verdana Pro Cond Black", 0, 24)); // NOI18N
-        gagnant.setForeground(new java.awt.Color(0, 0, 255));
-        gagnant.setText("Vous avez gagné !!!!");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -80,14 +75,9 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panneau_grille, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(235, 235, 235)
-                                .addComponent(gagnant))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(258, 258, 258)
-                                .addComponent(lancer_partie)))
-                        .addGap(0, 236, Short.MAX_VALUE)))
+                        .addGap(258, 258, 258)
+                        .addComponent(lancer_partie)
+                        .addGap(0, 268, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -97,9 +87,7 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
                 .addComponent(panneau_grille, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lancer_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(gagnant, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12))
+                .addGap(46, 46, 46))
         );
 
         pack();
@@ -107,13 +95,15 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
 
     private void lancer_partieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancer_partieActionPerformed
     lancer_partie();
-    gagnant.setVisible(false);// TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_lancer_partieActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -210,7 +200,6 @@ public boolean EtreGagnant (){ //méthode pour savoir si le joueur a gagné
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel gagnant;
     private javax.swing.JButton lancer_partie;
     private javax.swing.JPanel panneau_grille;
     // End of variables declaration//GEN-END:variables
