@@ -52,6 +52,7 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
 
         panneau_grille = new javax.swing.JPanel();
         lancer_partie = new javax.swing.JButton();
+        gagnant = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,6 +67,18 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
             }
         });
 
+        gagnant.setBackground(new java.awt.Color(204, 204, 204));
+        gagnant.setFont(new java.awt.Font("Verdana Pro Cond Semibold", 0, 12)); // NOI18N
+        gagnant.setForeground(new java.awt.Color(0, 204, 255));
+        gagnant.setText("Vous avez gagné !!!");
+        gagnant.setDisabledTextColor(new java.awt.Color(0, 255, 255));
+        gagnant.setSelectedTextColor(new java.awt.Color(0, 204, 255));
+        gagnant.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gagnantActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -76,6 +89,8 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
             .addGroup(layout.createSequentialGroup()
                 .addGap(149, 149, 149)
                 .addComponent(lancer_partie)
+                .addGap(18, 18, 18)
+                .addComponent(gagnant, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -84,7 +99,11 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
                 .addContainerGap()
                 .addComponent(panneau_grille, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(lancer_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lancer_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(gagnant)
+                        .addGap(9, 9, 9)))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -92,8 +111,15 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
     }// </editor-fold>//GEN-END:initComponents
 
     private void lancer_partieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancer_partieActionPerformed
-    lancer_partie();        // TODO add your handling code here:
+    lancer_partie();
+    gagnant.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_lancer_partieActionPerformed
+
+    private void gagnantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gagnantActionPerformed
+while (plateauDeJeu.EtreGagnant()==false) {
+      gagnant.setVisible(false);
+}// TODO add your handling code here:
+    }//GEN-LAST:event_gagnantActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,8 +189,26 @@ public void allumer_lumieres(){ //on allume quelques cases aléatoires
 
         }   
     }
+public boolean EtreGagnant (){ //méthode pour savoir si le joueur a gagné 
+        int compteur = 0;
+        for (int i=0; i<5; i++){
+            for (int j=0; j<5; j++){
+                if ( plateauDeJeu.GrilleDeJeu[i][j].etreEteinte() == true ){
+                    compteur +=1;
+                }
+            }
+        }
+        
+        if (compteur == 25){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField gagnant;
     private javax.swing.JButton lancer_partie;
     private javax.swing.JPanel panneau_grille;
     // End of variables declaration//GEN-END:variables
