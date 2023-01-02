@@ -52,7 +52,7 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
 
         panneau_grille = new javax.swing.JPanel();
         lancer_partie = new javax.swing.JButton();
-        gagnant = new javax.swing.JTextField();
+        gagnant = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +60,7 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
         panneau_grille.setLayout(new java.awt.GridLayout(5, 5));
 
         lancer_partie.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        lancer_partie.setForeground(new java.awt.Color(0, 0, 153));
         lancer_partie.setText("Démarrer Partie");
         lancer_partie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,31 +68,23 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
             }
         });
 
-        gagnant.setBackground(new java.awt.Color(204, 204, 204));
-        gagnant.setFont(new java.awt.Font("Verdana Pro Cond Semibold", 0, 12)); // NOI18N
-        gagnant.setForeground(new java.awt.Color(0, 204, 255));
-        gagnant.setText("Vous avez gagné !!!");
-        gagnant.setDisabledTextColor(new java.awt.Color(0, 255, 255));
-        gagnant.setSelectedTextColor(new java.awt.Color(0, 204, 255));
-        gagnant.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gagnantActionPerformed(evt);
-            }
-        });
+        gagnant.setFont(new java.awt.Font("Verdana Pro Cond Black", 0, 36)); // NOI18N
+        gagnant.setForeground(new java.awt.Color(0, 0, 255));
+        gagnant.setText("Vous avez gagné !!!!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(panneau_grille, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+                .addComponent(panneau_grille, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(149, 149, 149)
+                .addContainerGap(101, Short.MAX_VALUE)
                 .addComponent(lancer_partie)
-                .addGap(18, 18, 18)
-                .addComponent(gagnant, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(gagnant)
+                .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,11 +92,9 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
                 .addContainerGap()
                 .addComponent(panneau_grille, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lancer_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(gagnant)
-                        .addGap(9, 9, 9)))
+                    .addComponent(gagnant))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -114,12 +105,6 @@ plateauDeJeu.clic_sur_case(cellGraph.x, cellGraph.y);
     lancer_partie();
     gagnant.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_lancer_partieActionPerformed
-
-    private void gagnantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gagnantActionPerformed
-while (plateauDeJeu.EtreGagnant()==false) {
-      gagnant.setVisible(false);
-}// TODO add your handling code here:
-    }//GEN-LAST:event_gagnantActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,11 +138,20 @@ while (plateauDeJeu.EtreGagnant()==false) {
             public void run() {
                 new interfaceGraphique().setVisible(true);
             }
+            
         });
+        
+           
+            
+        
         
     }
          public void lancer_partie(){ //tant qu'il y a des lumières allumées on demande au joueur de choisir une ligne et colonne de la cellule qu'il veut changer d'etat
-        
+        for (int i=0;i<5;i++){
+            for(int j=0;j<5;j++){
+                plateauDeJeu.EteindreCase(i, j);
+            }
+        }
         allumer_lumieres();
         
       //  while (plateau.EtreGagnant()==false){
@@ -206,7 +200,7 @@ public boolean EtreGagnant (){ //méthode pour savoir si le joueur a gagné
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField gagnant;
+    private javax.swing.JLabel gagnant;
     private javax.swing.JButton lancer_partie;
     private javax.swing.JPanel panneau_grille;
     // End of variables declaration//GEN-END:variables
